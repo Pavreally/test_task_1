@@ -1,0 +1,79 @@
+$bg-wrap: #fff;
+
+@mixin items-styles {
+
+  .item > h4 {
+    margin: 10px 0;
+  }
+
+  .item > h5 {
+    float: right;
+    font-weight: bold;
+    margin: 8px 20px 0 0;
+  }
+
+  .item {
+
+    button {
+      float: right;
+      margin: 0;
+    }
+  }
+}
+
+.wrap-items {
+  @include align-center-middle-ie;
+  @include size(100%, 650px);
+  background-color: $bg-wrap;
+  overflow: hidden;
+  padding: 0 0 50px;
+  position: absolute;
+}
+
+.item {
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 10px 0 0;
+  }
+}
+
+// View blocks
+.block {
+
+  @include items-styles;
+}
+
+// View tables
+.table {
+
+  @media screen and (min-width: 1024px) {
+
+    img {
+      height: 100px;
+      min-width: 150px;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
+
+    h5 {
+      font-weight: bold;
+      max-width: 120px;
+      padding: 0 10px 0 0;
+      text-align: right;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+
+    @include items-styles;
+
+    .item {
+
+      h5 {
+        display: contents;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin align-center-middle {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin align-center-middle-ie {
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+@mixin size($width, $height) {
+  @if ($width != '' or $width != null) {
+    width: $width;
+  } @if ($height != '' or $height != null) {
+    height: $height;
+  }
+}

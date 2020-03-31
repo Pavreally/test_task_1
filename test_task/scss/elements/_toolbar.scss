@@ -1,0 +1,118 @@
+$bg-toolbar: rgb(134, 134, 134);
+$padding-bullets-menu: 8px;
+
+$red: rgb(180, 57, 57);
+
+.wrap-toolbar {
+  @include size(100%, 50px);
+  background-color: $bg-toolbar;
+}
+
+// Menu
+.toolbar-menu {
+  @include size(150px, 50px);
+  cursor: pointer;
+
+  &:hover {
+
+    > ul {
+      display: block;
+    }
+  }
+
+  > ul {
+    border: 1px $black solid;
+    display: none;
+    margin: 50px 0 0;
+    position: absolute;
+  }
+
+  > ul > li {
+
+    &::before {
+      content: '\25CF';
+      padding-right: $padding-bullets-menu;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  > ul > li > ul > li {
+
+    &:hover {
+
+      > ul {
+        display: block;
+      }
+    }
+
+    &::before {
+      content: '\2218';
+      padding-right: $padding-bullets-menu;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  > ul > li > ul {
+    border: $black solid;
+    border-width: 0 1px 1px;
+    margin: 0 0 0 -10px;
+    padding: 0 0 10px 50px;
+    position: absolute;
+    width: 210px;
+
+    &:hover {
+
+      > ul {
+        display: block;
+      }
+    }
+  }
+
+  ul {
+    background-color: $white;
+    list-style-type: none;
+    padding: 5px 5px 0;
+    z-index: 10;
+
+    li {
+      padding: 4px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.sub-toolbar-menu {
+  background-color: $white;
+  border: 1px $black solid;
+  display: none;
+  margin: -30px 0 0 154px;
+  position: absolute;
+
+  ul > li {
+    padding-left: 10px;
+    width: 200px;
+  }
+
+  li {
+
+    &::before {
+      content: '\25A0';
+      padding-right: $padding-bullets-menu;
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+// Trigger for view items style
+.trigger-view-styles {
+  @include size(150px, 50px);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
