@@ -1,7 +1,11 @@
 $bg-toolbar: rgb(134, 134, 134);
 $padding-bullets-menu: 8px;
 
-$red: rgb(180, 57, 57);
+.hide {
+  min-height: 0;
+  opacity: 0;
+  transition: .1s ease-in-out;
+}
 
 .wrap-toolbar {
   @include size(100%, 50px);

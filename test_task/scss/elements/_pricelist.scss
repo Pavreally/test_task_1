@@ -1,9 +1,11 @@
-$bg-wrap: #fff;
-
 @mixin items-styles {
 
   .item > h4 {
     margin: 10px 0;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .item > h5 {
@@ -21,10 +23,27 @@ $bg-wrap: #fff;
   }
 }
 
+@mixin button-edit-name-title {
+  background-color: $white;
+
+  > button {
+    background-color: $color-3;
+
+    &:hover {
+      background-color: $color-2;
+    }
+
+    &:active,
+    &:focus {
+      background-color: $color-3;
+    }
+  }
+}
+
 .wrap-items {
   @include align-center-middle-ie;
   @include size(100%, 650px);
-  background-color: $bg-wrap;
+  background-color: $white;
   overflow: hidden;
   padding: 0 0 50px;
   position: absolute;
@@ -43,8 +62,28 @@ $bg-wrap: #fff;
   @include items-styles;
 }
 
+// Edit form for element name with block mode
+.block > section > .item > form {
+
+  @include button-edit-name-title;
+  @include size(100%, 95px);
+  margin: 0 0 10px;
+  position: relative;
+
+  > button {
+    width: 100%;
+  }
+}
+
 // View tables
 .table {
+
+  h4 {
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
   @media screen and (min-width: 1024px) {
 
@@ -75,5 +114,27 @@ $bg-wrap: #fff;
         display: contents;
       }
     }
+  }
+}
+
+// Edit form for element name with table mode
+.table > section > .item > form {
+
+  @media screen and (min-width: 1024px) {
+
+    @include button-edit-name-title;
+    margin: 0 0 0 -230px;
+    position: relative;
+
+    > button {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include button-edit-name-title;
+    @include size(100%, 95px);
+    margin: 0 0 10px;
+    position: relative;
   }
 }

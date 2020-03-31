@@ -36,3 +36,25 @@ $('.trigger-view-styles').mouseover(function () {
   }
 
 });
+
+$(document).ready(function () {
+
+  $('.wrap-items .item').each(function(i) {
+    var targetItem = i + 1;
+
+    if ($('#edit-name-item-' + targetItem).hasClass('hide')) {
+      $('#name-item-' + targetItem).click(function () {
+        $('#edit-name-item-' + targetItem).removeClass('hide');
+      });
+    }
+
+    $('#edit-name-item-' + targetItem + ' input').val($('#name-item-' + targetItem).text());
+
+    $('#edit-name-item-' + targetItem + ' button').click(function () {
+      $('#name-item-' + targetItem).text($('#edit-name-item-' + targetItem + ' input').val());
+      $('#edit-name-item-' + targetItem).addClass('hide');
+      return false; // disable form submission and to page reload
+    });
+  });
+
+});
