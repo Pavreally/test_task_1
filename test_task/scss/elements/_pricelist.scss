@@ -40,13 +40,22 @@
   }
 }
 
-.wrap-items {
+.block-items {
   @include align-center-middle-ie;
   @include size(100%, 650px);
   background-color: $white;
   overflow: hidden;
   padding: 0 0 50px;
   position: absolute;
+}
+
+.wrap-items {
+  list-style-type: none;
+  margin: 0;
+
+  li {
+    background-color: $white;
+  }
 }
 
 .item {
@@ -63,7 +72,7 @@
 }
 
 // Edit form for element name with block mode
-.block > section > .item > form {
+.block > li > .item > form {
 
   @include button-edit-name-title;
   @include size(100%, 95px);
@@ -118,7 +127,7 @@
 }
 
 // Edit form for element name with table mode
-.table > section > .item > form {
+.table > li > .item > form {
 
   @media screen and (min-width: 1024px) {
 
