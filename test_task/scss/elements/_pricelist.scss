@@ -1,6 +1,6 @@
 @mixin items-styles {
 
-  .item > h4 {
+  .inner-items > h4 {
     margin: 10px 0;
 
     &:hover {
@@ -8,13 +8,13 @@
     }
   }
 
-  .item > h5 {
+  .inner-items > h5 {
     float: right;
     font-weight: bold;
     margin: 8px 20px 0 0;
   }
 
-  .item {
+  .inner-items {
 
     button {
       float: right;
@@ -58,7 +58,7 @@
   }
 }
 
-.item {
+.inner-items {
 
   @media screen and (min-width: 1024px) {
     padding: 0 10px 0 0;
@@ -72,7 +72,7 @@
 }
 
 // Edit form for element name with block mode
-.block > li > .item > form {
+.block > li > .inner-items > form {
 
   @include button-edit-name-title;
   @include size(100%, 95px);
@@ -117,7 +117,7 @@
 
     @include items-styles;
 
-    .item {
+    .inner-items {
 
       h5 {
         display: contents;
@@ -127,7 +127,7 @@
 }
 
 // Edit form for element name with table mode
-.table > li > .item > form {
+.table > li > .inner-items > form {
 
   @media screen and (min-width: 1024px) {
 
