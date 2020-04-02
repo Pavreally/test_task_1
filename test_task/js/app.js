@@ -1,5 +1,3 @@
-$(document).foundation();
-
 var itemTitle = 'h4',
     itemTitleChangeInput = 'input',
     itemTitleChangeButton = 'button',
@@ -44,7 +42,7 @@ $(document).ready(function () {
 
   // Title item change
   $('.block-items .inner-items').each(function(i) {
-    i = i + 1;
+    i++;
 
     $('#item-' + i + ' ' + itemTitle).click(function () {
       if ($('#item-' + i + ' #form-title-item').hasClass('hide')) {
