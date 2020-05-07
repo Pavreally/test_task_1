@@ -32,6 +32,7 @@ function serve() {
 
   gulp.watch("scss/**/*.s+(a|c)ss", sass);
   gulp.watch("**/*.html").on('change', browserSync.reload);
+  gulp.watch("**/*.js").on('change', browserSync.reload);
 }
 
 gulp.task('sass', sass);
